@@ -1,7 +1,11 @@
+%img{ src: 'haml-lint.jpg' }
 %h1 Listing posts
-
-%table
-  %thead
+-# Consecutive comments
+-# should be condensed into a
+-# single multiline comment.
+%div.hamlLint
+%table{class: 'haml-lint'}
+  %thead#hamlId.hamlLint
     %tr
       %th Title
       %th Content
@@ -16,8 +20,7 @@
         %td= post.content
         %td= link_to 'Show', post
         %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete,
-                                      data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
